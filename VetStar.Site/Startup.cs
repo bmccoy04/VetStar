@@ -4,9 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace VetStar.Site
 {
@@ -27,6 +31,17 @@ namespace VetStar.Site
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+			services.AddAuthorization(options =>
+			{
+				options.AddPolicy("ReadPolicy", policyBuilder =>
+				{
+					policyBuilder.RequireAuthenticatedUser()
+						.RequireAssertion(context => context.User.HasClaim("Read", "true"))
+						.Build();
+				});
+			});
+            
             // Add framework services.
             services.AddMvc();
         }
@@ -46,6 +61,16 @@ namespace VetStar.Site
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+
+			app.UseCookieAuthentication(new CookieAuthenticationOptions()
+			{
+				AuthenticationScheme = "Cookies",
+				LoginPath = new PathString("/Account/"),
+				AccessDeniedPath = new PathString("/Account/Forbidden/"),
+				AutomaticAuthenticate = true,
+				AutomaticChallenge = true
+			});
 
             app.UseStaticFiles();
 
