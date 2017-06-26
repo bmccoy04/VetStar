@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetStar.Data", "VetStar.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetStar.Shared", "VetStar.Shared\VetStar.Shared.csproj", "{6F44861E-0DB8-4554-A700-BAE91A46AC81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetStar.Facade", "VetStar.Facade\VetStar.Facade.csproj", "{53DEA377-DAC0-45B6-AE6C-57655D19B235}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6F44861E-0DB8-4554-A700-BAE91A46AC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F44861E-0DB8-4554-A700-BAE91A46AC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F44861E-0DB8-4554-A700-BAE91A46AC81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53DEA377-DAC0-45B6-AE6C-57655D19B235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53DEA377-DAC0-45B6-AE6C-57655D19B235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53DEA377-DAC0-45B6-AE6C-57655D19B235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53DEA377-DAC0-45B6-AE6C-57655D19B235}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
