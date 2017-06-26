@@ -34,12 +34,15 @@ namespace VetStar.Site
 
 			services.AddAuthorization(options =>
 			{
-				options.AddPolicy("ReadPolicy", policyBuilder =>
-				{
-					policyBuilder.RequireAuthenticatedUser()
-						.RequireAssertion(context => context.User.HasClaim("Read", "true"))
-						.Build();
-				});
+                options.AddPolicy("ReadPolicy", policy => policy.RequireClaim("Read", "true"));
+                options.AddPolicy("CantReadPolicy", policy => policy.RequireClaim("Read", "false"));
+                
+				//options.AddPolicy("ReadPolicy", policyBuilder =>
+				//{
+				//	policyBuilder.RequireAuthenticatedUser()
+				//		.RequireAssertion(context => context.User.HasClaim("Read", "true"))
+				//		.Build();
+				//});
 			});
             
             // Add framework services.
