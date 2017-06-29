@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Sample\" />
   </ItemGroup>
 
 </Project>
