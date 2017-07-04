@@ -39,3 +39,15 @@
 </form>
 	</div>
 <div class="clearfix"></div>
+<h3>Rendering Partial View:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>By Using Html.RenderPartial #</h5>
+        @{Html.RenderPartial("Partial"); }
+    </li>
+
+    <li class="two">
+        <h5>By Using Html.Partial #</h5>
+        @Html.Partial("Partial")
+    </li>
+</ol>

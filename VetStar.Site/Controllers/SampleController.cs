@@ -15,5 +15,10 @@ namespace VetStar.Site.Controllers
         {
             return View();
         }
+
+        public IActionResult ShowPartialView()
+        {
+            return PartialView("Partial");
+        }
     }
 }
